@@ -1,0 +1,416 @@
+---
+title: "Contaminantes atmosféricos desde la estación TLA(2000 a 2022)"
+author: "Ander Odriozola, Anneliese Monroy Roesch, Valeria Cardenas, Ana Paula Figueroa"
+date: "2023-05-24"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Los datos
+```{r}
+M10 = read.csv("FAC2010.csv")
+M21 = read.csv("FAC2021.csv")
+M22 = read.csv("FAC2022.csv")
+M00 = read.csv("FAC2000.csv")
+```
+
+## MESES
+
+```{r}
+M00[M00 == -99] <- NA
+M10[M10 == -99] <- NA
+M21[M21 == -99] <- NA
+M22[M22 == -99] <- NA
+
+ene00 = M00[1:744, ]
+feb00 = M00[745:1440, ]
+mar00 = M00[1441:2209, ]
+abr00 = M00[2210:2904, ]
+may00 = M00[2905:3648, ]
+jun00 = M00[3649:4368, ]
+jul00 = M00[4369:5112, ]
+ago00 = M00[5113:5856, ]
+sep00 = M00[5857:6576, ]
+oct00 = M00[6577:7320, ]
+nov00 = M00[7321:8040, ]
+dic00 = M00[8041:8784, ]
+
+ene10 = M10[1:744, ]
+feb10 = M10[745:1416, ]
+mar10 = M10[1417:2160, ]
+abr10 = M10[2161:2880, ]
+may10 = M10[2881:3624, ]
+jun10 = M10[3625:4344, ]
+jul10 = M10[4345:5088, ]
+ago10 = M10[5088:5832, ]
+
+sep10 = M10[5833:6552, ]
+oct10 = M10[6553:7296, ]
+nov10 = M10[7297:8016, ]
+dic10 = M10[8017:8760, ]
+
+ene21 = M21[1:744, ]
+feb21 = M21[745:1416, ]
+mar21 = M21[1417:2160, ]
+abr21 = M21[2161:2880, ]
+may21 = M21[2881:3624, ]
+jun21 = M21[3625:4344, ]
+jul21 = M21[4345:5088, ]
+ago21 = M21[5088:5832, ]
+sep21 = M21[5833:6552, ]
+oct21 = M21[6553:7296, ]
+nov21 = M21[7297:8016, ]
+dic21 = M21[8017:8760, ]
+
+ene22 = M22[1:744, ]
+feb22 = M22[745:1416, ]
+mar22 = M22[1417:2160, ]
+abr22 = M22[2161:2880, ]
+may22 = M22[2881:3624, ]
+jun22 = M22[3625:4344, ]
+jul22 = M22[4345:5088, ]
+ago22 = M22[5088:5832, ]
+sep22 = M22[5833:6552, ]
+oct22 = M22[6553:7296, ]
+nov22 = M22[7297:8016, ]
+
+```
+
+## Promedios para el caso del monóxido de carbono (CO)
+
+```{r}
+ene00nox = 51.2328
+feb00nox = mean(feb00$NOX, na.rm = TRUE)
+mar00nox = mean(mar00$NOX, na.rm = TRUE)
+abr00nox = mean(abr00$NOX, na.rm = TRUE)
+may00nox = mean(may00$NOX, na.rm = TRUE)
+jun00nox = mean(jun00$NOX, na.rm = TRUE)
+jul00nox = mean(jul00$NOX, na.rm = TRUE)
+ago00nox = mean(ago00$NOX, na.rm = TRUE)
+sep00nox = mean(sep00$NOX, na.rm = TRUE)
+oct00nox = mean(oct00$NOX, na.rm = TRUE)
+nov00nox = mean(as.numeric(nov00$NOX), na.rm = TRUE)
+dic00nox = mean(dic00$NOX, na.rm = TRUE)
+prom_00nox = c(ene00nox,feb00nox, mar00nox, abr00nox, may00nox, jun00nox, jul00nox, ago00nox, sep00nox, oct00nox, nov00nox, dic00nox)
+
+ene10nox = mean(ene10$NOX, na.rm = TRUE)
+feb10nox = mean(feb10$NOX, na.rm = TRUE)
+mar10nox = mean(mar10$NOX, na.rm = TRUE)
+abr10nox = mean(abr10$NOX, na.rm = TRUE)
+may10nox = mean(may10$NOX, na.rm = TRUE)
+jun10nox = mean(jun10$NOX, na.rm = TRUE)
+jul10nox = mean(jul10$NOX, na.rm = TRUE)
+ago10nox = mean(ago10$NOX, na.rm = TRUE)
+sep10nox = mean(sep10$NOX, na.rm = TRUE)
+oct10nox = mean(oct10$NOX, na.rm = TRUE)
+nov10nox = mean(nov10$NOX, na.rm = TRUE)
+dic10nox = mean(dic10$NOX, na.rm = TRUE)
+prom_10nox = c(ene10nox,feb10nox, mar10nox, abr10nox, may10nox, jun10nox, jul10nox, ago10nox, sep10nox, oct10nox, nov10nox, dic10nox)
+
+ene21nox = mean(ene21$NOX, na.rm = TRUE)
+feb21nox = mean(feb21$NOX, na.rm = TRUE)
+mar21nox = mean(mar21$NOX, na.rm = TRUE)
+abr21nox = mean(abr21$NOX, na.rm = TRUE)
+may21nox = mean(may21$NOX, na.rm = TRUE)
+jun21nox = mean(jun21$NOX, na.rm = TRUE)
+jul21nox = mean(jul21$NOX, na.rm = TRUE)
+ago21nox = mean(ago21$NOX, na.rm = TRUE)
+sep21nox = mean(sep21$NOX, na.rm = TRUE)
+oct21nox = mean(oct21$NOX, na.rm = TRUE)
+nov21nox = mean(nov21$NOX, na.rm = TRUE)
+dic21nox = mean(dic21$NOX, na.rm = TRUE)
+prom_21nox = c(ene21nox,feb21nox, mar21nox, abr21nox, may21nox, jun21nox, jul21nox, ago21nox, sep21nox, oct21nox, nov21nox, dic21nox)
+
+ene22nox = mean(ene22$NOX, na.rm = TRUE)
+feb22nox = mean(feb22$NOX, na.rm = TRUE)
+mar22nox = mean(mar22$NOX, na.rm = TRUE)
+abr22nox = mean(abr22$NOX, na.rm = TRUE)
+may22nox = mean(may22$NOX, na.rm = TRUE)
+jun22nox = mean(jun22$NOX, na.rm = TRUE)
+jul22nox = mean(jul22$NOX, na.rm = TRUE)
+ago22nox = mean(ago22$NOX, na.rm = TRUE)
+sep22nox = mean(sep22$NOX, na.rm = TRUE)
+oct22nox = mean(oct22$NOX, na.rm = TRUE)
+nov22nox = mean(nov22$NOX, na.rm = TRUE)
+prom_22nox = c(ene22nox,feb22nox, mar22nox, abr22nox, may22nox, jun22nox, jul22nox, ago22nox, sep22nox, oct22nox, nov22nox)
+
+mediasNOX = c(prom_00nox, prom_10nox, prom_21nox, prom_22nox)
+mediasNOX
+```
+Para obtener el dato de NaN, se hace el proceso de interpolación. y - 58.51042 = 7.2776(x - 2).
+Por lo cual la ecuacion restante es: y = 7.2776 x + 43.95522
+Para calcular el mes 1 que es NaN, metemos 1 a la ecuacion. por lo cual nos da y = 51.2328.
+51.2328 es el valor para ene00co.
+```{r}
+plot(mediasNOX, type = "l", pch = 19, col = "lightslateblue", main ="Promedios mensuales NOX desde 2000 a 2022", ylab = "Promedio", xlab = "Mes",  lwd = 2)
+text(12, 0.4, "2000", adj = 0, cex = .7) # de izq a der 0 (0.5 es centro)
+text(24,  0.4, "2010",adj = 0, cex = 0.7)
+text(37,  0.4, "2021",adj = 0, cex = 0.7)
+
+```
+Aqui se puede aprecear los valores promedios de NOX durante el tiempo. Se puede ver que han disminuido debilmente durante el tiempo.
+
+## Gráfico de caja y biogote junto
+
+```{r}
+boxplot(mediasNOX, horizontal = TRUE, col="coral", main ="Promedios de NOX desde 2000 a 2022",xlab = "Promedio", ylab = "Frecuencia")
+
+stripchart(mediasNOX, method = "jitter", pch = 19, add = TRUE, col = "lightslateblue")
+```
+Este grafico describe donde esta situado el primer cuartil y tambien donde esta situado el 3 cuartil de la informacion que en todos los casos esta en las orillas de la caja. Los valores de el valor minimo y el valor maximo estan representados en los bordes. La linea negra dentro de la caja representa la media de todos los promedios. Finalmente, esto describe que la mayoria de los datos estan dentro de la caja. Aqui se puede ver que el primer cuartil cae alrededor de el valor de 31 y el tercer cuartil cae en el valor de 52. Se puede ver que la media tiene un valor aproximado de 43.
+**Interpretación**  
+texto
+
+## Guardando los promedios en archivo leible
+
+```{r}
+
+write.csv(mediasNOX, "mediasNOX2000_2022.csv", row.names = FALSE)
+# Aqui es el dato donde se deberia de guardar el archivo.
+```
+
+##Matriz de correlación
+```{r}
+
+M_co = read.csv("mediasCO2000_2022.csv")
+M_no = read.csv("mediasNO2000_2022.csv")
+M_no2 = read.csv("mediasNO22000_2022.csv")
+M_nox = read.csv("mediasNOX2000_2022.csv")
+M_o3 = read.csv("mediasO32000_2022.csv")
+M_pm10 = read.csv("mediasPM102000_2022.csv")
+M_so2 = read.csv("mediasSO22000_2022.csv")
+
+M = data.frame(M_co,M_no,M_no2,M_nox,M_o3,M_pm10,M_so2)
+names(M)[names(M) == "x"] <- "M_co"
+names(M)[names(M) == "x.1"] <- "M_no"
+names(M)[names(M) == "x.2"] <- "M_no2"
+names(M)[names(M) == "x.3"] <- "M_nox"
+names(M)[names(M) == "x.4"] <- "M_o3"
+names(M)[names(M) == "x.5"] <- "M_pm10"
+names(M)[names(M) == "x.6"] <- "M_so2"
+M
+cor(M)
+```
+Esta matriz es de correlacion y relaciona estas variables. Dentro de la matriz, los datos que se acerquen mas a el valor de 1, tienden a tener mucha correlacion. Esto significa que esta varaible tiene gran influenza en la otra variable. Si el dato de nuestra matriz se acerca a 0, esto significa que estas dos variables no tienen nada con que relacionarse, por lo cual el movimiento de datos de una matriz no afecta a la otra.M_co y M_no tienen una correlacion fuerte, M_no2 y M_nox tiene una correlacion fuerte y M_co y M_so2 tienen una correlacion fuerte.
+
+
+## Análisis de tendencia y estacionalidad
+
+```{r}
+mes = 1:47
+CO = ts(mediasNOX[1:47], frequency = 12, start(c(2000,1)))
+T = decompose(CO, type = "m")
+plot(T, col = "peru")
+```
+
+## Hallando el modelo de regresión lineal de la tendencia
+
+```{r}
+
+# desestacionalizando los promedios mensuales de NOX
+y1 = T$x/T$seasonal
+plot(mes, y1, type = "o", col = "darkslateblue", main = "Tendencia de la serie", xlab = "Mes", ylab = "Promedio", lwd = 2, pch = 19)
+regresion = lm(y1 ~ mes)
+regresion
+abline(regresion, col ="hotpink", lwd =2)
+text(25, 27, "promedio = 48.723 - 0.189 * mes")
+
+```
+
+## CME proyección de tendencias
+
+```{r}
+e = NA
+g = NA
+f = function(x) 48.723 - 0.189 * x
+for(i in 1:47){
+g[i] = f(i)*T$seasonal[i]
+e[i] = mediasNOX[i]- g[i]
+}
+CME_tendencia = mean(e^2, na.rm = TRUE)
+cat("El CME del Método de proyección de tendencia es: ", CME_tendencia, "\n")
+
+```
+
+```{r}
+xg = 1:47
+plot(xg, mediasNOX, col ="gold2", main = "Promedio mensual NOX vs Pronóstico", type = "o", lwd = 2, pch = 19)
+lines(xg, g, col = "cadetblue3", type = "o", lwd =2, lty = 5)
+legend("topleft", legend = c("Promedio", "Pronóstico"), fill = c("gold2", "cadetblue3"))
+```
+
+## EL pronóstico para el siguiente año con el modelo lineal
+
+```{r}
+f = function(x) 1.9384 - 0.0402 * x
+f(48)*T$seasonal[1]
+f(49)*T$seasonal[2]
+f(50)*T$seasonal[3]
+f(51)*T$seasonal[4]
+f(52)*T$seasonal[5]
+f(53)*T$seasonal[6]
+f(54)*T$seasonal[7]
+f(55)*T$seasonal[8]
+f(56)*T$seasonal[9]
+f(57)*T$seasonal[10]
+f(58)*T$seasonal[11]
+f(59)*T$seasonal[12]
+```
+
+## Parte 3: Regresion curvilinea
+Ho = Los valores de beta 1 y beta 2 no son significativos.
+H1 = Los valores de beta 1 y beta 2 si son significativos.
+Regla de decision: si el valor p < 0.01, se rechaza Ho.
+```{r}
+b = mes
+c = mes^2
+  
+regresion2 = regresion = lm(y1 ~ b + c)
+regresion2
+summary(regresion2)
+
+```
+Se puede observar en los datos que este modelo tiene un número de R^2 bastante bajo, y solamente beta 0 funciona como número significativo. Esto significa que tiene muy poca utilidad, y se debe de cambiar a otro.
+
+#Segundo modelo curvilineo
+```{r}
+b = mes
+c = mes^2
+d = mes^3
+e = mes^4
+f = mes^5
+
+
+  
+regresion3 = regresion = lm(y1 ~ b + c + d + e + f)
+regresion3
+summary(regresion3)
+```
+
+Como se puede observar, todos los valores beta de la regresión son significativos, porque su valor p es menor a 0.01. Sin embargo, su valor de R^2 es de 31.57%, lo cual significa que este modelo no es muy representativo de los datos, por lo cual optamos por buscar otro modelo.
+
+#Tercer modelo curvilineo
+```{r}
+b = mes
+c = mes^2
+d = mes^3
+e = mes^4
+f = mes^5
+g = mes^6
+h = mes^7
+  
+regresion4 = regresion = lm(y1 ~ b + c + d + e + f + g + h)
+regresion4
+summary(regresion4)
+```
+
+Tras varios intentos de encontrar una regresión adecuada, llegamos a la conclusión de que no es posible encontrar un modelo economicamente viable para este caso, ya que requeriria de una cantidad extremadamente grande de variables para llegar a un valor de R^2 suficientemente grande. Por ende optamos por el segundo modelo curvilineo porque es el que tiene mayor cantidad de betas significativos.
+
+#Nuevo modelo
+$y = 6.398e+01 - 1.070e+01*x + 1.491e+00*x^2 - 7.864e-02*x^3 + 1.747e-03*x^4 - 1.386e-05*x^5$
+
+Para este modelo, se puede observar que todas sus betas son significativas debido a que todas tienen valor menor a 0.01, y que el valor de su R^2 es igual a 31.57%
+
+##Grafica
+```{r}
+plot(mes, y1, type = "o", col = "darkslateblue", main = "Tendencia de la 
+serie", xlab = "Mes", ylab = "Promedio", lwd = 2, pch = 19)
+x1 = 1:47
+y1 = y = 6.398e+01 - 1.070e+01*mes + 1.491e+00*mes^2 - 7.864e-02*mes^3 + 1.747e-03*mes^4 - 1.386e-05*mes^5
+lines(x1, y1, col = "orange", lwd=2)
+text(10, 6, "y = 6.398e+01 - 1.070e+01*x + 1.491e+00*x^2 - 7.864e-02*x^3 + 1.747e-03*x^4 - 1.386e-05*x^5", cex = 0.7)
+
+```
+
+##Graficar CME del modelo final
+```{r}
+e = NA
+g = NA
+f = function(x) 6.398e+01 - 1.070e+01*x + 1.491e+00*x^2 - 7.864e-02*x^3 + 1.747e-03*x^4 - 1.386e-05*x^5
+for(i in 1:47){
+g[i] = f(i)*T$seasonal[i]
+e[i] = mediasNOX[i]- g[i]
+}
+CME_tendencia = mean(e^2, na.rm = TRUE)
+cat("El CME del Método de proyección de tendencia es: ", CME_tendencia, "\n")
+```
+Esto	significa	que	en	promedio,	las	predicciones	del	modelo	difieren	de	los	valores	reales en	una	magnitud	de	aproximadamente	48.44658	unidades	al	cuadrado.
+
+##Predicción del evento siguiente con el modelo final
+```{r}
+f = function(x) 22.28 + 4.026*x - 0.3873*x^2 + 0.01148*x^3 - 0.0001096*x^4
+f(48)*T$seasonal[1]
+
+f(49)*T$seasonal[2]
+
+f(50)*T$seasonal[3]
+
+f(51)*T$seasonal[4]
+
+f(52)*T$seasonal[5]
+
+f(53)*T$seasonal[6]
+
+f(54)*T$seasonal[7]
+
+f(55)*T$seasonal[8]
+
+f(56)*T$seasonal[9]
+
+f(57)*T$seasonal[10]
+
+f(58)*T$seasonal[11]
+
+f(59)*T$seasonal[12]
+```
+Los valores anteriores representan mejores	predicciones	para	el	futuro al	usar	el	modelo	curvilíneo en	vez del	modelo	lineal,	debido	a	que	este modelo	sigue	la	tendencia	de	los	datos basados	en	su	periodicidad.
+
+##Analisis prueba de los residuos, media, normalidad, grafica de residuales, homocedasticidad y tendencia.
+Ho: Media de residuos = 0
+H1: Media de residuos != 0
+Regla de decisión: si valor p < 0.01, se rechaza Ho.
+```{r}
+summary(regresion3$residuals)
+t.test(regresion3$residuals, conf.level = 0.99)
+```
+Como valor p = 1, no existe suficiente evidencia como para rechazar la Ho. Por ende, suponemos que la media de residuos = 0. Aparte si vemos el intervalo de confianza de 99%, notamos que 0 se encuentra ahi.
+
+##Prueba de normalidad de los residuos
+Ho: Los datos vienen de una población normal
+H1: Los datos no vienen de una población normal
+Regla de decisión: si valor p < 0.01, se rechaza Ho.
+```{r}
+shapiro.test(regresion3$residuals)
+
+```
+Para este caso, utilizamos Shapiro porque nuestra muestra es menor a 50.
+
+Como el valor p = 0.5046 > 0.01, no hay evidencia suficiente para rechazar Ho y se asume que provienen de una población normal.
+
+##Gráfico de residuales
+```{r}
+k = regresion3$fitted.values
+l = regresion3$residuals
+plot(k,l, pch = 20, col ="coral",main = "Grafica de los residuales")
+abline(h = 0, lty = 5)
+```
+
+Se puede osbervar que la grafica no tiene tendencia por lo cual concluimos que es un buen modelo para poder usar.
+
+##Prueba de Homocedasticidad
+```{r}
+library(lmtest) 
+bptest(regresion3)
+```
+El valor de p-value es menor a 0.05 por lo cual si pasa la prueba y los datos no tienen homocedasticidad.
+El modelo lineal simple resulto bueno ya que paso todas las pruebas del analisis residual.
+
+
+
+
+
