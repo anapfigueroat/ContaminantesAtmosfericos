@@ -21,6 +21,7 @@ Este proyecto realiza un análisis estadístico y de series de tiempo sobre los 
 ## Tecnologías utilizadas:
 - R (Librerías: lmtest, zoo, entre otras).
 
+##
 ### English Version
 # Atmospheric Pollutants Analysis (NOX) 2000-2022
 This project performs a statistical and time-series analysis of Nitrogen Oxides (NOX) and other air pollutants recorded at the TLA monitoring station from 2000 to 2022.
