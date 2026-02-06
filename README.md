@@ -22,7 +22,7 @@ Modelado de Series de Tiempo: Descomposición de la serie en tendencia, estacion
 Pronósticos y Regresión: Implementación de modelos de regresión lineal y polinomial (curvilínea) para predecir niveles futuros de contaminación y evaluar la significancia de las tendencias.
 +1
 
-Tecnologías utilizadas:
+## Tecnologías utilizadas:
 - R (Librerías: lmtest, zoo, entre otras).
 
 ### English Version
@@ -32,7 +32,7 @@ This project performs a statistical and time-series analysis of Nitrogen Oxides 
 
 ## Key Features:
 
-Data Processing: Data cleaning of missing values and use of linear interpolation to complete monthly data series.
+- *Data Processing:* Data cleaning of missing values and use of linear interpolation to complete monthly data series.
 +1
 
 
