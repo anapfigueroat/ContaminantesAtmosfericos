@@ -5,21 +5,21 @@ Este proyecto realiza un análisis estadístico y de series de tiempo sobre los 
 
 ## Características principales:
 
-Procesamiento de Datos: Limpieza de valores nulos e interpolación lineal para completar series de datos mensuales.
+- **Procesamiento de Datos:** Limpieza de valores nulos e interpolación lineal para completar series de datos mensuales.
 +1
 
 
-Análisis Descriptivo: Cálculo de promedios mensuales y visualización mediante gráficos de líneas y diagramas de caja (boxplots) para identificar tendencias y variabilidad.
+- **Análisis Descriptivo:** Cálculo de promedios mensuales y visualización mediante gráficos de líneas y diagramas de caja (boxplots) para identificar tendencias y variabilidad.
 +1
 
 
-Correlación de Variables: Matriz de correlación para evaluar la relación entre NOX, CO, NO, NO2, O3, PM10 y SO2.
+- **Correlación de Variables:** Matriz de correlación para evaluar la relación entre NOX, CO, NO, NO2, O3, PM10 y SO2.
 
 
-Modelado de Series de Tiempo: Descomposición de la serie en tendencia, estacionalidad y componentes aleatorios utilizando modelos multiplicativos.
+- **Modelado de Series de Tiempo:** Descomposición de la serie en tendencia, estacionalidad y componentes aleatorios utilizando modelos multiplicativos.
 
 
-Pronósticos y Regresión: Implementación de modelos de regresión lineal y polinomial (curvilínea) para predecir niveles futuros de contaminación y evaluar la significancia de las tendencias.
+- **Pronósticos y Regresión:** Implementación de modelos de regresión lineal y polinomial (curvilínea) para predecir niveles futuros de contaminación y evaluar la significancia de las tendencias.
 +1
 
 ## Tecnologías utilizadas:
@@ -32,23 +32,23 @@ This project performs a statistical and time-series analysis of Nitrogen Oxides 
 
 ## Key Features:
 
-- *Data Processing:* Data cleaning of missing values and use of linear interpolation to complete monthly data series.
+- **Data Processing:** Data cleaning of missing values and use of linear interpolation to complete monthly data series.
 +1
 
 
-Descriptive Analysis: Calculation of monthly averages and visualization through line charts and boxplots to identify trends and variability.
+- **Descriptive Analysis:** Calculation of monthly averages and visualization through line charts and boxplots to identify trends and variability.
 +1
 
 
-Variable Correlation: Correlation matrix to evaluate the relationship between NOX, CO, NO, NO2, O3, PM10, and SO2.
+- **Variable Correlation:** Correlation matrix to evaluate the relationship between NOX, CO, NO, NO2, O3, PM10, and SO2.
 
 
-Time Series Modeling: Decomposition of the series into trend, seasonality, and random components using multiplicative models.
+- **Time Series Modeling:** Decomposition of the series into trend, seasonality, and random components using multiplicative models.
 
 
-Forecasting and Regression: Implementation of linear and polynomial (curvilinear) regression models to predict future pollution levels and evaluate trend significance.
+- **Forecasting and Regression:** Implementation of linear and polynomial (curvilinear) regression models to predict future pollution levels and evaluate trend significance.
 +1
 
-Technologies Used:
+## Technologies Used:
 
-R (Libraries: lmtest, zoo, and others).
+- R (Libraries: lmtest, zoo, and others).
