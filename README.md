@@ -1,9 +1,9 @@
-## Opción en Español
+### Opción en Español
 # Análisis de Contaminantes Atmosféricos (NOX) 2000-2022
 Este proyecto realiza un análisis estadístico y de series de tiempo sobre los niveles de óxidos de nitrógeno (NOX) y otros contaminantes registrados en la estación de monitoreo TLA durante el periodo 2000-2022.
 +1
 
-Características principales:
+## Características principales:
 
 Procesamiento de Datos: Limpieza de valores nulos e interpolación lineal para completar series de datos mensuales.
 +1
@@ -25,7 +25,7 @@ Pronósticos y Regresión: Implementación de modelos de regresión lineal y pol
 Tecnologías utilizadas:
 - R (Librerías: lmtest, zoo, entre otras).
 
-## English Version
+### English Version
 # Atmospheric Pollutants Analysis (NOX) 2000-2022
 This project performs a statistical and time-series analysis of Nitrogen Oxides (NOX) and other air pollutants recorded at the TLA monitoring station from 2000 to 2022.
 +1
